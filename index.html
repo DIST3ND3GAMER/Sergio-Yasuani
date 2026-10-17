@@ -262,7 +262,7 @@ const C = {
   musica: "assets/cancion.mp3",               // canción principal: solo suena cuando el invitado toca PLAY
   ambiente: "assets/ambiente.mp3",            // música de fondo suave: suena sola al abrir el sobre
   volumen: {ambiente:.35, cancion:.85, ambienteConCancion:0},   // 0 a 1. ambienteConCancion: volumen del ambiente mientras suena la canción (0 = se apaga)
-  cancion: {titulo:"Colocar nombre de la canción", artista:"Colocar artista"},
+  cancion: {titulo:"Risk it all", artista:"Bruno Mars"},
   /* Disco que gira: pon assets/disco.jpg (foto cuadrada) para personalizarlo.
      modo "completo": la foto cubre todo el disco · modo "etiqueta": la foto solo va en el centro */
   disco: {imagen:"assets/disco.jpg", modo:"completo"},
@@ -299,11 +299,11 @@ const C = {
   duracionHoras: 8,                           // para "Agregar al calendario"
 
   itinerario: [
-    {hora:"Colocar hora", txt:"Ceremonia", icono:"assets/ic-ceremonia.png"},
+    {hora:"Colocar hora", txt:"Ceremonia Religiosa", icono:"assets/ic-ceremonia.png"},
     {hora:"Colocar hora", txt:"Photocall", icono:"assets/ic-foto.png"},
-    {hora:"Colocar hora", txt:"Cocktail",  icono:"assets/ic-cocktail.png"},
+    {hora:"Colocar hora", txt:"Recepción",  icono:"assets/ic-cocktail.png"},
     {hora:"Colocar hora", txt:"Comida",    icono:"assets/ic-comida.png"},
-    {hora:"Colocar hora", txt:"Tarta",     icono:"assets/ic-tarta.png"},
+    {hora:"Colocar hora", txt:"Pastel",     icono:"assets/ic-tarta.png"},
     {hora:"Colocar hora", txt:"Fiesta",    icono:"assets/ic-fiesta.png"}
   ],
 
@@ -332,7 +332,7 @@ const mono=sm=>`<div class="mono rv${sm?" sm":""}" role="img" aria-label="Monogr
 
 const q=new URLSearchParams(location.search);
 const invitado=(q.get("invitado")||"").trim().slice(0,60);
-const pases=Math.min(20,Math.max(1,parseInt(q.get("pases"))||C.paseDefecto));
+const pases=Math.min(100,Math.max(1,parseInt(q.get("pases"))||C.paseDefecto));
 
 const orn=()=>`<div class="orn rv"><svg viewBox="0 0 170 20" width="170"><path pathLength="1" d="M0 10H66"/><path pathLength="1" d="M104 10H170"/><g class="fl"><path d="M85 1c4 4 4 14 0 18-4-4-4-14 0-18zM76 10c4-4 14-4 18 0-4 4-14 4-18 0z" fill-opacity=".9"/></g></svg></div>`;
 const H=(t,id="")=>`${orn()}<h2 class="script" data-sp ${id?`id="${id}"`:""}>${t}</h2>`;
